@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{# at the terminal, run pip install django-bootstrap4 #}
+{% load bootstrap4 %}
+
+{% block content %}
+<style>
+    body {
+        background-image: url('https://wallpapercave.com/wp/wp9764012.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: Arial, sans-serif;
+    }
+
+    
+</style>
+
+<div class="container">
+  <h1>Login</h1>
+  <form method="POST" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+      <button type="submit" class="btn btn-primary">Login</button>
+    {% endbuttons %}
+  </form>
+</div>
+{% endblock %}
+
